@@ -1,5 +1,9 @@
 class PagesController < ApplicationController
   def landing
-    @students = Student.all
+    if params[:query].present? 
+      @students = Student.where(name: params[:query])
+    else
+      @students = Student.all
+    end
   end
 end

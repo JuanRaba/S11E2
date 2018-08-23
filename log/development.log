@@ -1123,3 +1123,108 @@ Processing by PagesController#landing as HTML
 Completed 200 OK in 44ms (Views: 41.0ms | ActiveRecord: 0.5ms)
 
 
+Started GET "/pages/landing" for 127.0.0.1 at 2018-08-23 10:43:31 -0300
+Processing by PagesController#landing as HTML
+  Rendering pages/landing.html.erb within layouts/application
+  [1m[36mStudent Load (0.5ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  ↳ app/views/pages/landing.html.erb:14
+  Rendered pages/landing.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 53ms (Views: 50.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/pages/landing?query=hola" for 127.0.0.1 at 2018-08-23 10:43:38 -0300
+Processing by PagesController#landing as HTML
+  Parameters: {"query"=>"hola"}
+  Rendering pages/landing.html.erb within layouts/application
+  [1m[36mStudent Load (0.5ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  ↳ app/views/pages/landing.html.erb:14
+  Rendered pages/landing.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 63ms (Views: 58.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/students" for 127.0.0.1 at 2018-08-23 10:44:17 -0300
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/juan/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by StudentsController#index as HTML
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  ↳ app/views/students/index.html.erb:15
+  Rendered students/index.html.erb within layouts/application (19.8ms)
+Completed 200 OK in 207ms (Views: 194.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/pages/landing" for 127.0.0.1 at 2018-08-23 10:44:20 -0300
+Processing by PagesController#landing as HTML
+  Rendering pages/landing.html.erb within layouts/application
+  [1m[36mStudent Load (0.5ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  ↳ app/views/pages/landing.html.erb:14
+  Rendered pages/landing.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 47ms (Views: 44.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/pages/landing?query=" for 127.0.0.1 at 2018-08-23 10:44:23 -0300
+Processing by PagesController#landing as HTML
+  Parameters: {"query"=>""}
+  Rendering pages/landing.html.erb within layouts/application
+  [1m[36mStudent Load (0.7ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  ↳ app/views/pages/landing.html.erb:14
+  Rendered pages/landing.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 78ms (Views: 75.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/pages/landing?query=primero" for 127.0.0.1 at 2018-08-23 10:49:52 -0300
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/juan/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by PagesController#landing as HTML
+  Parameters: {"query"=>"primero"}
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `isPresent?' for "primero":String
+Did you mean?  present?):
+  
+app/controllers/pages_controller.rb:3:in `landing'
+Started GET "/pages/landing?query=primero" for 127.0.0.1 at 2018-08-23 10:50:56 -0300
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/juan/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by PagesController#landing as HTML
+  Parameters: {"query"=>"primero"}
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `isPresent?' for #<ActionController::Parameters:0xaf27790>
+Did you mean?  present?):
+  
+app/controllers/pages_controller.rb:3:in `landing'
+Started GET "/pages/landing?query=primero" for 127.0.0.1 at 2018-08-23 10:52:47 -0300
+Processing by PagesController#landing as HTML
+  Parameters: {"query"=>"primero"}
+  Rendering pages/landing.html.erb within layouts/application
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."name" = ?[0m  [["name", "primero"]]
+  ↳ app/views/pages/landing.html.erb:14
+  Rendered pages/landing.html.erb within layouts/application (12.5ms)
+Completed 200 OK in 192ms (Views: 186.2ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/pages/landing?query=" for 127.0.0.1 at 2018-08-23 10:53:01 -0300
+Processing by PagesController#landing as HTML
+  Parameters: {"query"=>""}
+  Rendering pages/landing.html.erb within layouts/application
+  [1m[36mStudent Load (0.5ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  ↳ app/views/pages/landing.html.erb:14
+  Rendered pages/landing.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 38ms (Views: 35.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/pages/landing?query=omas" for 127.0.0.1 at 2018-08-23 10:53:08 -0300
+Processing by PagesController#landing as HTML
+  Parameters: {"query"=>"omas"}
+  Rendering pages/landing.html.erb within layouts/application
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."name" = ?[0m  [["name", "omas"]]
+  ↳ app/views/pages/landing.html.erb:14
+  Rendered pages/landing.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 43ms (Views: 41.1ms | ActiveRecord: 0.3ms)
+
+
